@@ -58,8 +58,10 @@ public class StudentRepository {
         }
     }
     public void deleteAllTeachers(){
+        for(Student s:studentTeacherPair.keySet()) {
+            studentDb.remove(s.getName());
+        }
         teacherDb.clear();
-        studentDb.clear();
         studentTeacherPair.clear();
         classroom.clear();
     }
